@@ -5,23 +5,26 @@
 .Top {
   width: 100%;
   height: 100px;
-  background-color: blue;
+  background-color: rgb(53, 53, 68);
 }
 
 .Bottom{
   display: flex;
   width: 100%;
-  height: 500px;
-  background-color: #ffffff;
+  height: 500vh;
+  background-color: #b7a0a0;
 }
 
 .Left{
   width: 25%;
-  height: 100%;
-  background-color: blueviolet;
+  height: 100vh;
+  background-color: rgb(195, 159, 229);
 }
 .Right{
   width: 75%;
-  height: 100%;
-  background-color: brown;
+  height: 100vh;
+  background-color: rgb(143, 201, 217);
+}
+p{
+  color: white;
 }

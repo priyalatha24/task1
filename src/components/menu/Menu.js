@@ -4,12 +4,37 @@ class Menu extends Component{
 
   constructor(props){
         super(props);
-        this.username = "Karthik"
+      this.state ={name:"hello imarticus"}
+      console.log("constructor")
     }
 
-    render()
-    
-    {
+    componentDidMount=()=>{
+        console.log("compoundDidMount")
+
+        this.timer =setInterval(()=>{
+            console.log("Hello all")
+            this.setState({name:"Hello All"});
+        },5000);
+    }
+
+    componentWillUnmount =()=>{
+        console.log("componentWillUnmount")
+        clearInterval(this.timer);
+    }
+
+    shouldComponentUpdate =(updatedProps,updatedState)=>{
+        console.log(this.state.name+" :"+updatedState.name)
+        console.log("shouldComponentUpdate")
+        return true;
+    }
+    getSnapshotBeforeUpdate=()=>{
+        console.log("getSnapshotBeforeUpdate")
+    }
+    componentDidCatch=() =>{
+        console.log("componentDidCatch")
+    }
+
+    render() {
 
         let html;
         let name = "Hello World";
@@ -45,7 +70,12 @@ class Menu extends Component{
                     <li>5*2 = {mul(5,2)}</li>
                     <li>5/2 = {div(5,2)}</li>
                     <li>Name: {name}</li>
-                    <li>Global name: {this.username}</li>
+                    <li>Global name: {this.state.name}</li>
+                    <li>Global name: {this.props.first_name}</li>
+                    <li>Global name: {this.props.age}</li>
+                    {this.props?.data?.map((skill)=>(
+                          <li>skill: {skill.skill} Rating:{skill.rating}</li>
+                    ))}
                 </ul>
             </div>
         );

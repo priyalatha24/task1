@@ -5,6 +5,8 @@ class Person extends Component{
 render(){
     return(
         <div>
+            <p>{this.props.token}</p>
+            <p>{this.props.age}</p>
             <table>
                 <thead>
                     <tr>
